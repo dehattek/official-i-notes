@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明访问指南 · 爱游戏</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+            background: #f6f8fa;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 – 简洁标题区 */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #162032 100%);
+            color: #e9edf2;
+            padding: 4rem 2rem 3.2rem;
+            text-align: center;
+            border-bottom: 1px solid #2a3a4e;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            max-width: 660px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: #b0c4d9;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem;
+        }
+
+        /* 卡片风格段落组 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.03);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+            border-left: 4px solid #2563eb;
+            padding-left: 0.9rem;
+        }
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.2rem 0 0.4rem;
+            color: #1e293b;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* 引用提示 – 带背景色 */
+        .insight {
+            background: #f0f4fe;
+            border-left: 4px solid #2563eb;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            margin: 1.4rem 0 1.2rem;
+            font-size: 0.98rem;
+        }
+        .insight strong {
+            color: #1d4ed8;
+            font-weight: 600;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        a:hover {
+            color: #1a4bbf;
+            border-bottom-color: #2563eb;
+        }
+
+        /* 列表 – 小圆点 */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.6rem 0 0.8rem;
+        }
+        li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0.6rem;
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        /* 摘录分隔线 */
+        .faq-divider {
+            margin: 2.4rem 0 1.8rem;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d0d8e0, transparent);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 3.5rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2.2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero { padding: 2.8rem 1.2rem 2.2rem; }
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 1.8rem 1rem 3rem; }
+            .card { padding: 1.5rem 1.2rem; }
+            h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>简明认识 · 爱游戏</h1>
+        <p>从一次访问开始，逐步熟悉一个面向游戏爱好者的中文平台。</p>
+    </header>
+
+    <main class="container">
+
+        <!-- 段落1：导语 + 切入 -->
+        <div class="card">
+            <h2>为什么需要一份指南</h2>
+            <p>网络上游戏站点众多，但真正值得花时间了解、稳定提供内容服务的平台并没有那么多。<strong>爱游戏</strong> 是其中一个持续运营的中文游戏资讯站点，内容涵盖新作介绍、玩法分析、社区动态和部分实用工具。这篇文章从“如何快速上手访问”和“内容特色”两个角度，为你整理一份轻量的使用指引。</p>
+            <p>如果你是第一次听说这个站点，下面的几个要点能帮你判断它是否值得加入书签。</p>
+        </div>
+
+        <!-- 段落2：特点 + 简明结构 -->
+        <div class="card">
+            <h2>内容结构：主题明确，更新稳定</h2>
+            <p>根据长期观察，<a href="https://official-i-game.com.cn">爱游戏</a> 的内容大致分为几个板块：</p>
+            <ul>
+                <li><strong>新游动态</strong> — 收录近期上线或测试的游戏简讯，附有官方信息源，适合追踪新作品节奏。</li>
+                <li><strong>玩法与评测</strong> — 偏重实际体验总结，不堆砌参数，对单机、联机、小体量独立游戏都有涉及。</li>
+                <li><strong>社区话题</strong> — 偶尔整理玩家讨论或开发者访谈，增加对游戏设计背景的理解。</li>
+            </ul>
+            <p>整体页面以文字为主，配图精炼，加载速度在同类站点中属于上游。对于希望快速获取有效信息、不想被广告和弹窗干扰的读者来说，是一个清净的选择。</p>
+            <div class="insight">
+                <strong>💡 一次访问提醒</strong>：首次进入站点时，建议先浏览“最近更新”栏目，观察内容风格与更新频率是否与你的兴趣吻合。
+            </div>
+        </div>
+
+        <!-- 段落3：场景 + 实用提示 -->
+        <div class="card">
+            <h2>谁更适合使用这个站点</h2>
+            <p>从实际场景出发，下面几类读者会更容易从中获得价值：</p>
+            <ul>
+                <li><strong>日常找游戏的人</strong> — 厌倦了纯算法推荐，想看看人工筛选的游戏短评和简介。</li>
+                <li><strong>轻度研究型玩家</strong> — 想了解某款游戏的系统或社区反馈，又不想翻阅长篇攻略。</li>
+                <li><strong>关心中文游戏环境</strong> — 站点收录了不少国产独立游戏或汉化作品信息，对本土创作生态有一定关注。</li>
+            </ul>
+            <p>相反，如果你追求实时直播数据、硬核数值排行或游戏下载直链，这个站点可能不是第一选择——它更偏向信息索引和阅读体验。</p>
+        </div>
+
+        <!-- 段落4：FAQ 摘要 + 引用 -->
+        <div class="card">
+            <h2>常见疑问摘要</h2>
+            <p>根据读者群里的交流，整理两个最常被问到的问题：</p>
+            <p><strong>Q：内容是否保持中立？</strong><br>
+            从过往更新看，评测部分会明确指出游戏缺点，不回避争议。社区讨论也保留了不同声音，整体风格客观，没有明显的商业软文倾向。</p>
+            <p><strong>Q：访问是否需要注册或付费？</strong><br>
+            目前浏览全部公开内容无需登录，也没有收费墙。部分互动功能可能需要注册账号，但注册流程简单，没有强制推送。</p>
+            <div class="insight">
+                <strong>📎 访问句：</strong> 如果你希望从一个信息密度适中、界面干净的游戏站点开始探索，可以试试将 <a href="https://official-i-game.com.cn">爱游戏</a> 加入常用书签。
+            </div>
+        </div>
+
+        <!-- 结尾段落：鼓励定向访问 -->
+        <div class="card" style="background: #f9fafc;">
+            <p style="font-size: 1rem; margin-bottom: 0.3rem;">很多游戏站点追求大而全，但 <strong>爱游戏</strong> 选择了一条更克制的路：把内容组织清楚，把更新节奏稳住，剩下的交给读者自己判断。无论你是为了找新游戏、读一篇诚恳的短评，还是只是想换个干净的地方看看游戏圈发生了什么，它都值得你打开一次。</p>
+            <p style="margin-top: 0.8rem; color: #334155;">直接访问 <a href="https://official-i-game.com.cn">爱游戏</a>，从首页开始浏览吧。</p>
+        </div>
+
+        <hr class="faq-divider">
+
+        <div class="footer-note">
+            本文档仅为站点介绍与访问指南 · 内容基于持续观察 · 无任何引导或担保含义
+        </div>
+
+    </main>
+
+</body>
+</html>
