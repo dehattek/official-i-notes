@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七星彩 · 知识库与站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1e1e1e;
+            background-color: #f5f7fa;
+        }
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: #38bdf8;
+            opacity: 0.4;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 640px;
+            margin: 0.6rem auto 1.8rem;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #7dd3fc;
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        /* 主体内容区（浅色） */
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 2.8rem 1.8rem 4rem;
+        }
+        /* 目录感网格 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            padding: 1.8rem 1.6rem;
+            transition: box-shadow 0.2s;
+            border: 1px solid #eef2f6;
+        }
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+        }
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .card h2 i {
+            font-style: normal;
+            color: #38bdf8;
+            font-size: 1.2rem;
+        }
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 0.5rem;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li::before {
+            content: "·";
+            color: #38bdf8;
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1rem;
+        }
+        .card a {
+            color: #0a7cff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .card a:hover {
+            border-bottom-color: #0a7cff;
+        }
+        /* 提示区 */
+        .notice-box {
+            background: #f8fafc;
+            border-left: 4px solid #38bdf8;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin: 2.2rem 0 2.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .notice-box .icon {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: #38bdf8;
+            flex-shrink: 0;
+        }
+        .notice-box .content {
+            flex: 1;
+        }
+        .notice-box .content strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #0f172a;
+            font-size: 1rem;
+        }
+        .notice-box .content p {
+            color: #475569;
+            font-size: 0.92rem;
+            margin: 0;
+        }
+        /* 相关信息区：FAQ 摘要风格 */
+        .faq-compact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+            margin: 2.5rem 0 1.8rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.8rem;
+        }
+        .faq-item .q {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item .a {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+        .faq-item .a a {
+            color: #0a7cff;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0c4de;
+        }
+        .faq-item .a a:hover {
+            border-bottom-color: #0a7cff;
+        }
+        /* 底部元信息 */
+        .meta-footer {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .meta-footer a {
+            color: #64748b;
+            text-decoration: none;
+            border-bottom: 1px dotted #cbd5e1;
+        }
+        .meta-footer a:hover {
+            color: #0a7cff;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .faq-compact {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .container {
+                padding: 1.8rem 1rem 3rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            .notice-box {
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+            .meta-footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2.8rem 1rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <h1>七星彩 · 知识库</h1>
+        <p class="sub">聚合站点信息、使用说明与可信参考，为访问者提供清晰的索引路径。</p>
+        <span class="badge">✔ 持续更新 · 内容源自公开资料</span>
+    </header>
+
+    <!-- 正文区：浅色背景，目录感卡片 -->
+    <main class="container">
+        <div class="grid-2">
+            <!-- 站点介绍卡片 -->
+            <section class="card">
+                <h2><i>📌</i> 站点说明</h2>
+                <p>「<a href="https://site-qxc.com">七星彩</a>」是一个围绕数字排列与组合信息展示的在线平台，提供结构化的数据参考与规则说明。站点内容以客观、可查阅为原则，不涉及实时开奖或资金交易。</p>
+                <p style="margin-top: 0.6rem;">所有页面均采用静态呈现，适合作为知识索引或信息对照的入口。</p>
+            </section>
+
+            <!-- 可信提示卡片 -->
+            <section class="card">
+                <h2><i>🔍</i> 可信说明</h2>
+                <ul>
+                    <li>信息来源于合规渠道，定期核对基础规则与常见问题。</li>
+                    <li>页面无诱导性弹窗或强制跳转，所有链接均标注明确。</li>
+                    <li>不收集用户隐私数据，不嵌入第三方跟踪脚本。</li>
+                    <li>如发现内容偏差，可通过站点页脚联系方式反馈勘误。</li>
+                </ul>
+            </section>
+
+            <!-- 使用场景卡片 -->
+            <section class="card">
+                <h2><i>🧭</i> 适用场景</h2>
+                <ul>
+                    <li>快速了解数字排列型网站的基本信息与背景。</li>
+                    <li>查阅不同玩法、组合与术语的定义。</li>
+                    <li>作为参考入口，对比多来源的公开说明。</li>
+                    <li>研究或教育场景下，获取结构化的知识索引。</li>
+                </ul>
+            </section>
+
+            <!-- 相关信息卡片 -->
+            <section class="card">
+                <h2><i>📎</i> 相关信息</h2>
+                <p>网站采用轻量化设计，核心页面包含：规则总览、术语表、常见问答及静态示例数据。所有内容均以 <code>.html</code> 形式托管，无须注册即可浏览全部公开页面。</p>
+                <p style="margin-top: 0.6rem;">建议搭配桌面端或平板浏览，以获得最佳阅读体验。</p>
+            </section>
+        </div>
+
+        <!-- 提示区 -->
+        <div class="notice-box">
+            <div class="icon">💡</div>
+            <div class="content">
+                <strong>提示</strong>
+                <p>本知识库为索引性质，不构成任何形式的投资建议或操作指导。请结合多方信息自行判断。若需访问实际站点，可直接在浏览器地址栏输入 <a href="https://site-qxc.com">七星彩</a> 的域名。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要区（相关信息区） -->
+        <h2 style="font-size:1.2rem; font-weight:600; margin: 2rem 0 0.8rem; color:#0f172a;">❓ 常见疑问摘要</h2>
+        <div class="faq-compact">
+            <div class="faq-item">
+                <div class="q">站点内容更新频率？</div>
+                <div class="a">基础规则随公开信息同步，通常每月复核一次。特殊变动会在页面标注修订日期。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">是否提供下载或 API？</div>
+                <div class="a">目前仅提供静态页面浏览，不开放数据接口或文件下载。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">如何确认链接安全？</div>
+                <div class="a">所有站内链接均指向同一域名下的资源，外部链接会以 <code>rel="nofollow"</code> 标识。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">内容是否支持转载？</div>
+                <div class="a">欢迎在保留出处链接（<a href="https://site-qxc.com">七星彩</a>）的前提下分享摘要，请勿篡改原文。</div>
+            </div>
+        </div>
+
+        <!-- 底部元信息 -->
+        <div class="meta-footer">
+            <span>© 2025 · 知识库入口式页面</span>
+            <span>数据核查至公开资料 · 仅供信息参考</span>
+            <span><a href="https://site-qxc.com">七星彩</a> — 站点首页</span>
+        </div>
+    </main>
+</body>
+</html>
